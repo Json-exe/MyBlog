@@ -10,7 +10,8 @@ layout: default
     {{ content }}
 
     {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Kategorien" }}</h2>
+    <h2 class="post-list-heading" style="text-decoration: underline;">{{ page.list_title | default: "Kategorien:" }}
+    </h2>
 
     {%- for category in site.categories -%}
     <h2 class="post-list-heading">
@@ -22,20 +23,32 @@ layout: default
         {%- include post-card.html post=post -%}
         {%- endfor -%}
         <div class="more-button">
-            <a href="{{ '/category/' | append: category[0] | downcase | relative_url }}">More</a>
+            <a href="{{ '/category/' | append: category[0] | downcase | relative_url }}">Mehr lesen!</a>
         </div>
     </div>
     {%- endfor -%}
+
+    {%- if site.tags.size > 0 -%}
+
+    <div style="margin-top: 3rem;">
+        <h2>Alle Tags:</h2>
+        {%- for tag in site.tags -%}
+        <a href="{{ '/tag/' | append: tag[0] | downcase | relative_url }}">{{ tag[0] }}</a>
+        {%- if forloop.last == false -%} | {%- endif -%}
+        {%- endfor -%}
+    </div>
+
+    {%- endif -%}
     {%- endif -%}
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    var cards = document.querySelectorAll('.post-card');
-    cards.forEach(function(card) {
-        card.addEventListener('click', function() {
-            window.location.href = card.getAttribute('data-url');
+    document.addEventListener('DOMContentLoaded', function () {
+        var cards = document.querySelectorAll('.post-card');
+        cards.forEach(function (card) {
+            card.addEventListener('click', function () {
+                window.location.href = card.getAttribute('data-url');
+            });
         });
     });
-});
 </script>
