@@ -1,0 +1,127 @@
+.home {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 16px;
+    padding: 16px;
+    transition: transform 0.2s;
+    width: 100%;
+}
+
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 10px; 
+    box-sizing: border-box;
+}
+
+.post-navigation-previous, .post-navigation-next {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.post-navigation-previous .title, .post-navigation-next .title {
+    margin: 0;
+}
+
+.post-navigation-next {
+    text-align: right;
+}
+
+.previous-post {
+    text-align: left;
+}
+
+.next-post {
+    text-align: right;
+}
+
+.clipping-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #999;
+}
+
+.post-link {
+    color: #333;
+    text-decoration: none;
+}
+
+.post-link:hover {
+    text-decoration: underline;
+}
+
+.post-tags {
+    margin-top: 8px;
+}
+
+.post-tag {
+    background: #f1f1f1;
+    border-radius: 4px;
+    color: #555;
+    padding: 2px 6px;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.post-tag:hover {
+    background: #e1e1e1;
+}
+
+.more-button {
+    text-align: right;
+    margin: 16px;
+}
+
+.more-button a {
+    background: #007acc;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.more-button a:hover {
+    background: #005fa3;
+}
+
+@media (max-width: 768px) {
+    .post-navigation {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    .post-navigation-previous, .post-navigation-next {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .post-navigation-next {
+        text-align: left;
+    }
+}

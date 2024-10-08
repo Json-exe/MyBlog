@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div class="home">
+    {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+    {%- endif -%}
+
+    {{ content }}
+
+    {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Kategorien" }}</h2>
+
+    {%- for category in site.categories -%}
+    <h2 class="post-list-heading">
+        <a href="{{ '/category/' | append: category[0] | relative_url }}">{{ category[0] }}</a>
+    </h2>
+    <div class="post-list">
+        {%- assign limited_posts = category[1] | slice: 0, 10 -%}
+        {%- for post in limited_posts -%}
+        {%- include post-card.html post=post -%}
+        {%- endfor -%}
+        <div class="more-button">
+            <a href="{{ '/category/' | append: category[0] | relative_url }}">More</a>
+        </div>
+    </div>
+    {%- endfor -%}
+    {%- endif -%}
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var cards = document.querySelectorAll('.post-card');
+    cards.forEach(function(card) {
+        card.addEventListener('click', function() {
+            window.location.href = card.getAttribute('data-url');
+        });
+    });
+});
+</script>
