@@ -14,7 +14,7 @@ layout: default
 
     {%- for category in site.categories -%}
     <h2 class="post-list-heading">
-        <a href="{{ '/category/' | append: category[0] | relative_url }}">{{ category[0] }}</a>
+        <a href="{{ '/category/' | append: category[0] | downcase | relative_url }}">{{ category[0] }}</a>
     </h2>
     <div class="post-list">
         {%- assign limited_posts = category[1] | slice: 0, 10 -%}
@@ -22,7 +22,7 @@ layout: default
         {%- include post-card.html post=post -%}
         {%- endfor -%}
         <div class="more-button">
-            <a href="{{ '/category/' | append: category[0] | relative_url }}">More</a>
+            <a href="{{ '/category/' | append: category[0] | downcase | relative_url }}">More</a>
         </div>
     </div>
     {%- endfor -%}

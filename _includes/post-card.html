@@ -11,7 +11,7 @@
     <p class="post-tags">
         Tags:
         {%- for tag in include.post.tags -%}
-        <a href="{{ '/tag/' | append: tag | relative_url }}" class="post-tag">{{ tag }}</a>{% if forloop.last == false
+        <a href="{{ '/tag/' | append: tag | downcase | relative_url }}" class="post-tag">{{ tag }}</a>{% if forloop.last == false
         %}, {% endif %}
         {%- endfor -%}
     </p>
