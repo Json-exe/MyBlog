@@ -5,7 +5,7 @@
         {{ include.post.title | escape }}
     </h3>
     {%- if site.show_excerpts -%}
-    <p>{{ include.post.excerpt }}</p>
+    <p class="post-excerpt">{{ include.post.excerpt }}</p>
     {%- endif -%}
     {%- if include.post.tags.size > 0 -%}
     <p class="post-tags">

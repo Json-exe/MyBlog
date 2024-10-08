@@ -47,6 +47,15 @@
     text-align: left;
 }
 
+.post-excerpt {
+    opacity: 0.7;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-clamp: 3;
+}
+
 .next-post {
     text-align: right;
 }
@@ -110,6 +119,17 @@
     background: #005fa3;
 }
 
+.post-container {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.post-container > * {
+    flex: 1 1 calc(50% - 16px); /* Two posts per row with a gap */
+    box-sizing: border-box;
+}
+
 @media (max-width: 768px) {
     .post-navigation {
         flex-direction: column-reverse;
@@ -123,5 +143,9 @@
 
     .post-navigation-next {
         text-align: left;
+    }
+
+    .post-container > * {
+        flex: 1 1 100%; /* One post per row on mobile */
     }
 }

@@ -5,6 +5,7 @@ date:   2024-10-08 11:00:00 +0200
 categories: Programmierung
 tags: DevLog
 author: Luca
+excerpt: In diesem ersten Blog-Eintrag teile ich mit worum es in diesem Blog hauptsächlich gehen wird. Viel Spaß beim Lesen!
 ---
 
 # MEIN BLOG!
