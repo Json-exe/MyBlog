@@ -29,6 +29,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://json-exe.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Json-exe
 show_excerpts: true
+image_assets_path: "/assets/images/posts/"
 
 # Build settings
 theme: minima
