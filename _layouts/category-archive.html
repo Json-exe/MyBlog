@@ -8,3 +8,14 @@ layout: default
   {%- include post-card.html post=post -%}
   {% endfor %}
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var cards = document.querySelectorAll('.post-card');
+    cards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        window.location.href = card.getAttribute('data-url');
+      });
+    });
+  });
+</script>
